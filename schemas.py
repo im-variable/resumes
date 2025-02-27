@@ -57,7 +57,7 @@ class UserResponse(BaseModel):
     skills: List[str]
 
     class Config:
-        orm_mode = True
+        from_attributes = True  # ✅ Use this in Pydantic v2
 
     @staticmethod
     def from_user(user: User):
